@@ -1,0 +1,33 @@
+{
+  "name": "poc-storage-streams",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Proof of concept implementation of an observable storage with streams",
+  "main": "index.js",
+  "scripts": {
+    "develop": "onchange 'storage.js' 'tests/**.js' -- npm test",
+    "test": "./node_modules/ospec/bin/ospec",
+    "_test": "ospec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orbitbot/poc-storage-streams.git"
+  },
+  "author": "Patrik Johnson <patrik@zebros.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orbitbot/poc-storage-streams/issues"
+  },
+  "homepage": "https://github.com/orbitbot/poc-storage-streams#readme",
+  "devDependencies": {
+    "mithril": "1.0.0-rc.7",
+    "onchange": "3.2.1",
+    "ospec": "1.2.2",
+    "rollup": "0.39.2",
+    "rollup-plugin-buble": "0.15.0",
+    "rollup-plugin-commonjs": "7.0.0",
+    "rollup-plugin-filesize": "1.0.1",
+    "rollup-plugin-node-resolve": "2.0.0",
+    "rollup-watch": "3.1.0"
+  }
+}
