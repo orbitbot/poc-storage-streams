@@ -17,12 +17,13 @@ export default function ProxyStorage(store, { namespace   = '',
       if (streams[key]) {
         streams[key](value)
       } else {
-        streams[key] = stream()
+        streams[key] = stream(value)
         streams[key].map((v) => store.setItem(namespace + key, serialize(v)))
       }
+      return true
     },
     deleteProperty : (t, key) => {
-      storage.removeItem
+      storage.removeItem(key)
       if (streams[key]) streams[key].end(true)
       delete streams[key]
     },

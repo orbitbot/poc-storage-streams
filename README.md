@@ -17,6 +17,8 @@ Observable data allows a neat way to react to changes, and an implementation tha
 
 The example implementation is a factory method that returns a single function used to query, set and remove items from the wrapped storage. This approach was in retrospect arbitrarily chosen over something mimicing the Storage API for somewhat more terse usage. Values set using the API are automatically stored to the Storage API-supporting object passed when initializing the storage, and are available directly on the storage object as [Mithril streams](https://github.com/lhorie/mithril.js/blob/rewrite/docs/stream.md), which support observing changes amongst other things, with a small payload.
 
+- [Simple demo environment on GH pages](https://orbitbot.github.io/poc-storage-streams/)
+
 ```javascript
 let storage = new Storage(window.localStorage)
 
@@ -93,6 +95,7 @@ Support for `Object.defineProperty` is fairly robust, with IE9 and Android 4.4 o
 
 In some modern es6 environments (FF, Chrome, Safari 12, Edge) it's possible to use [Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy), a new javascript feature for metaprogramming, to implement observable storage with streams neatly. The key benefit of Proxies over the above approaches is "catch all" setter functions, where code can be run when a proxy is assigned previously unknown keys. This allows for syntax that mimics normal objects or f.e. localStorage, while still providing access to observable streams of all proxied values.
 
+- [Simple demo environment on GH pages](https://orbitbot.github.io/poc-storage-streams/proxy.html)
 
 ```javascript
 let storage = new ProxyStorage(window.localStorage)
