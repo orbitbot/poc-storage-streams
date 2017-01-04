@@ -93,7 +93,7 @@ Support for `Object.defineProperty` is fairly robust, with IE9 and Android 4.4 o
 <br>
 ##### Using Proxy
 
-In some modern es6 environments (FF, Chrome, Safari 12, Edge) it's possible to use [Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy), a new javascript feature for metaprogramming, to implement observable storage with streams neatly. The key benefit of Proxies over the above approaches is "catch all" setter functions, where code can be run when a proxy is assigned previously unknown keys. This allows for syntax that mimics normal objects or f.e. localStorage, while still providing access to observable streams of all proxied values.
+In some modern es6 environments (FF, Chrome, Safari 10, Edge) it's possible to use [Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy), a new javascript feature for metaprogramming, to implement observable storage with streams neatly. The key benefit of Proxies over the above approaches is "catch all" setter functions, where code can be run when a proxy is assigned previously unknown keys. This allows for syntax that mimics normal objects or f.e. localStorage, while still providing access to observable streams of all proxied values.
 
 - [Simple demo environment on GH pages](https://orbitbot.github.io/poc-storage-streams/proxy.html)
 
